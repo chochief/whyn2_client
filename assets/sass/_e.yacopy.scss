@@ -1,0 +1,61 @@
+
+.ya-copyright {
+	position: absolute;
+	right: 5px;
+	bottom: 5px;
+	z-index: 10;
+
+	@include clearfix;
+
+	font-size: 0;
+}
+
+.ya-copyright__content-cell {
+	display: inline-block;
+	background-color: rgba(255,255,255,.75);
+	border-radius: 3px;
+	padding: 1px 3px;
+	vertical-align: bottom;
+}
+
+.ya-copyright__text {
+	display: inline-block;
+	margin-right: 5px;
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 11px;
+	line-height: 14px;
+}
+
+.ya-copyright__agreement {
+	color: #333;
+	text-decoration: underline;
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 11px;
+	line-height: 14px;
+}
+
+.ya-copyright__agreement:hover {
+	color: #c00;
+}
+
+.ya-copyright__logo-cell {
+	width: 46px;
+	height: 20px;
+	display: inline-block;
+	background-image: url("../img/yalogo.png");
+	margin-left: 4px;
+	opacity: .7;
+	position: relative;
+}
+
+.ya-copyright__logo-cell:hover {
+	opacity: 1;
+}
+
+.ya-copyright__link {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}

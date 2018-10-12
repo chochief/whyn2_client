@@ -1,0 +1,49 @@
+
+$width_point200: 700px
+$height_point200: 500px
+
+// @media (max-width: 700px) and (orientation:landscape)
+@media (orientation:landscape)
+	.news__content
+		// width: 65vmax
+		// margin: 0 7px 0 0
+
+// TODO тут проверить еще надо взимодействие с min-height
+@media (min-width: 700px) and (min-height: 500px)
+	.news__content
+		position: absolute
+		left: 200px // т.к. для больших экранов изображение pers фиксировано на 200px
+		bottom: 23vmin
+		margin: 0 7px 0 0
+	.spoiler__text
+		font-size: $pers_side/10 // 2.5vmin
+
+
+@mixin nums_limited ()
+	// nums
+	.nums
+		top: 230px
+		&.on .nums__value
+			font-size: 56px
+	.nums__score
+		margin: 8.6px 0
+	.nums__value
+		box-shadow: 0 0 5.8px 0 rgba(0,0,0,.6)
+		font-size: 46px
+		letter-spacing: 0.9px
+		padding: 2.9px 11.6px 1.9px 29px
+		text-shadow: -5.8px 1.9px 0.9px rgba(0,0,0,0.3)
+	.nums__menu
+		top: 450px
+
+// 800px - т.е. когда 25vmin = 200px
+// (min-width: 800px) and (orientation: portrait) - т.е. при портретной ориентации vmin берется по ширине
+@media (min-width: 800px) and (orientation: portrait)
+	.logo__num-score
+		font-size: 40px // 200/5
+	@include nums_limited()
+// (min-height: 800px) and (orientation: landscape) - при пейзажной vmin берется по высоте
+@media (min-height: 800px) and (orientation: landscape)
+	.logo__num-score
+		font-size: 40px // 200/5
+	@include nums_limited()

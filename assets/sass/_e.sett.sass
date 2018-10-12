@@ -1,0 +1,107 @@
+
+.settings
+	position: absolute
+	z-index: 10000
+	right: 6px
+	top: 100px
+	width: 260px
+	height: auto
+	background-color: rgba(255,255,255,0.9)
+	border-radius: 8px
+	padding: 7px 12px 11px
+	box-shadow: 0px 0px 3px 0 rgba(0,0,0,.3)
+	user-select: none
+	right: -100vmax
+	transition: right 0.3s ease // transition: bottom 0.1s ease-in-out
+	&::before
+		border: 10px solid transparent
+		border-bottom-color: rgba(255,255,255,0.85)
+		position: absolute
+		z-index: -1
+		top: -20px
+		right: 6px
+		content: ""
+	&.on
+		right: 6px
+	& .close__btn
+		position: absolute
+		top: 5px
+		right: 4px
+	& .help__btn
+		position: absolute
+		top: 5px
+		right: 35px
+
+// используется для @extend
+.sett
+	display: inline-block
+	border-radius: 20px
+	margin: 1px 0
+
+.sett__sex-data
+	@extend .sett
+	background-color: cornsilk
+	& .sett__btn
+		font-size: 18px
+		padding: 4px 0
+
+.sett__age-data
+	@extend .sett
+	background-color: antiquewhite
+	& .sett__age-n
+		font-size: 18px
+		padding: 4px 0
+
+.sett__filter_m
+	@extend .sett
+	background-color: bisque
+	& .sett__btn.off
+		font-size: 18px
+		padding: 4px 0
+
+.sett__filter_f
+	@extend .sett
+	background-color: peachpuff
+	& .sett__btn.off
+		font-size: 18px
+		padding: 4px 0
+
+.sett__btn
+	@extend .text__btn
+	@extend .btn_small
+	@include font_family('bold')
+	display: inline-block
+	margin: 2px 3px
+	text-align: center
+	vertical-align: bottom
+	font-size: 14px
+	padding: 6px 0 3px	
+	user-select: none
+	&:first-child
+		margin: 2px 3px 2px 0
+	&:last-child
+		margin: 2px 0 2px 3px
+	&.off
+		cursor: default
+	&.off:hover // кнопки фильтра М и Ж
+		box-shadow: none
+	&.off:active // кнопки фильтра М и Ж
+		background-position-y: 0
+
+.sett__caption
+	// @include font_family('bold')
+	font-size: 15px
+	margin: 8px 0 4px
+
+.sett__filter-lock
+	display: none
+	position: absolute
+	z-index: 10001
+	bottom: 0
+	left: 0
+	width: 280px
+	height: 100px
+	background-color: rgba(255,255,255,.5)
+	border-radius: 8px
+	&.on
+		display: block

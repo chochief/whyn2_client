@@ -1,0 +1,62 @@
+
+// COMMON
+// ADJUSTMENT
+
+html 
+	width: 100%
+	height: 100%
+	overflow: fixed
+	// overflow: hidden
+
+body 
+	width: 100%
+	height: 100%
+	// @include normal
+	@include font_family(light)
+	font-size: 14px
+	line-height: 1.42
+	// background-color: $grey-body
+	// color: $black
+	overflow: hidden // overflow-y: hidden // scroll
+	position: fixed
+	// position: relative
+
+
+h1, h2, h3, h4, h5, h6, p, span, div, a, br 
+	// &::selection  background: $blue-border color: $white 
+	// &::-moz-selection  background: $blue-border color: $white 
+	// &::-webkit-selection  background: $blue-border color: $white 
+	line-height: 1
+	margin: 0
+
+
+ul 
+	padding: 0
+	margin: 0
+
+	li 
+		list-style: none
+	
+
+
+p 
+	padding: 0
+	margin: 0
+
+
+a 
+	text-decoration: none
+
+
+* 
+	box-sizing: border-box
+
+
+.container 
+	width: 560px // 960px
+	margin: 0 auto
+	@include clearfix
+
+
+.hidden 
+	display: none

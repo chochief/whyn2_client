@@ -1,0 +1,301 @@
+
+// BUTTONS
+
+$iconbtn_width: 36px
+$iconbtn_width_large: 46px
+$iconbtn_width_small: 28px
+$iconbtn_width_small_ex: 18px
+
+.iconbtn_large
+	width: $iconbtn_width_large
+	height: $iconbtn_width_large
+	background-size: auto $iconbtn_width_large*3
+
+.iconbtn_small
+	width: $iconbtn_width_small
+	height: $iconbtn_width_small
+	background-size: auto $iconbtn_width_small*3
+
+.iconbtn_small_ex
+	width: $iconbtn_width_small_ex
+	height: $iconbtn_width_small_ex
+	background-size: auto $iconbtn_width_small_ex*3
+
+.icobtn 
+	position: absolute
+	z-index: 10
+	width: $iconbtn_width
+	height: $iconbtn_width
+	cursor: pointer
+	// background-size: cover
+	background-size: auto $iconbtn_width*3 // количество строк в спрайте - 1
+	background-image: url("../img/iconbtn_sprite.png")
+	background-repeat: no-repeat
+	opacity: 0.85
+	&:hover
+		opacity: 1
+	&.icobtn_off 
+		opacity: .4
+	&.icobtn_off:hover 
+		opacity: .5
+	// plate C
+	&.icobtn_zoomplus 
+		background-position: 0 0 
+	&.icobtn_zoomminus
+		background-position: (-$iconbtn_width) 0 
+	&.icobtn_rotauto
+		background-position: (-$iconbtn_width*2) 0 
+	&.icobtn_rotauto.iconbtn_on
+		background-position: (-$iconbtn_width*2) (-$iconbtn_width)
+	&.icobtn_rotnorth
+		@extend .iconbtn_large
+		background-position: (-$iconbtn_width_large*3) 0 
+	&.icobtn_rotnorth.iconbtn_on
+		@extend .iconbtn_large
+		background-position: (-$iconbtn_width_large*3) (-$iconbtn_width_large) 
+	&.icobtn_rotleft
+		background-position: (-$iconbtn_width*4) 0 
+	&.icobtn_rotright
+		background-position: (-$iconbtn_width*5) 0 
+	// plate B
+	&.icobtn_offline
+		@extend .iconbtn_large
+		background-position: (-$iconbtn_width_large*6) 0
+	&.icobtn_help
+		@extend .iconbtn_small
+		background-position: (-$iconbtn_width_small*8) 0
+	&.icobtn_settings
+		background-position: (-$iconbtn_width*7) 0 
+	&.icobtn_globus
+		background-position: (-$iconbtn_width*10) 0
+	// common
+	&.btn_plus
+		// @extend .iconbtn_small
+		// background-position: (-$iconbtn_width_small*2) (-$iconbtn_width_small*2)
+		// background-position: (-$iconbtn_width*2) (-$iconbtn_width*2)
+		@extend .iconbtn_small_ex
+		background-position: (-$iconbtn_width_small_ex*2) (-$iconbtn_width_small_ex*2)
+	&.btn_minus
+		@extend .iconbtn_small_ex
+		background-position: (-$iconbtn_width_small_ex*3) (-$iconbtn_width_small_ex*2)
+		// @extend .iconbtn_small
+		// background-position: (-$iconbtn_width_small*3) (-$iconbtn_width_small*2)
+	&.btn_save
+		@extend .iconbtn_large
+		background-position: (-$iconbtn_width_large*0) (-$iconbtn_width_large*2)
+	&.btn_close
+		@extend .iconbtn_large
+		background-position: (-$iconbtn_width_large*14) (-$iconbtn_width_large*0)
+
+// кнопка закрытия диалогов
+.window_btn_close
+	@extend .icobtn
+	position: absolute
+	z-index: 1006
+	top: 2px
+	right: 2px
+	width: $iconbtn_width_small_ex
+	height: $iconbtn_width_small_ex
+	background-size: auto $iconbtn_width_small_ex*3
+	background-position: (-$iconbtn_width_small_ex*14) (-$iconbtn_width_small_ex*0)
+	user-select: none		
+	&:hover
+		background-position: (-$iconbtn_width_small_ex*14) (-$iconbtn_width_small_ex*1)
+
+// plus__btn
+.zoop__btn
+	@include set_btns(0)
+
+.zoom__btn
+	@include set_btns(1)
+
+.rota__btn
+	@include set_btns(2)
+
+.rotn__btn
+	@include set_btns(3)
+
+.rotl__btn
+	@include set_btns(4)
+
+.rotr__btn
+	@include set_btns(5)
+
+.online__btn
+	@include set_btns(6)
+
+.setting__btn
+	@include set_btns(7)
+
+.help__btn
+	@include set_btns(8)
+
+.globus__btn
+	@include set_btns(10)
+
+.text__btn
+	@include set_btns(11)
+
+.plus__btn
+	@include set_btns(12)
+
+.minus__btn
+	@include set_btns(13)
+
+.close__btn
+	@include set_btns(14)
+
+.times__btn
+	@include set_btns(15)
+
+
+
+// B
+.iconplate_B
+	position: absolute
+	top: 2px
+	right: 2px
+	width: 90px
+	height: 90px
+	overflow: hidden
+
+#icobtn__offline 
+	top: 2px
+	right: 2px	
+
+#icobtn__help 
+	top: 3px
+	right: 54px	
+
+#icobtn__settings 
+	top:  52px
+	right: 2px	
+	// top: 37px // 55px
+	// right: 41px // 6px	
+
+
+// C
+.iconplate_C
+	position: absolute
+	bottom: 25px
+	right: 2px
+	width: 180px
+	height: 180px
+	overflow: hidden
+
+// #icobtn__globus 
+// 	bottom: 133px
+// 	right: 2px	
+
+// #icobtn__zoom_plus 
+// 	bottom: 93px
+// 	right: 2px
+
+// #icobtn__zoom_minus 
+// 	bottom: 53px
+// 	right: 2px
+
+// #icobtn__rotation_auto 
+// 	bottom: 2px
+// 	right: 52px
+
+// #icobtn__rotation_north 
+// 	bottom: 2px
+// 	right: 2px
+
+// #icobtn__rotation_right 
+// 	bottom: 2px
+// 	right: 92px
+
+// #icobtn__rotation_left 
+// 	bottom: 2px
+// 	right: 132px
+
+
+
+// // btn
+// .btn 
+// 	background-color: $blue2
+// 	color: $white
+// 	// @include normal
+// 	@include bold
+// 	font-size: 14px
+// 	letter-spacing: 1px
+// 	text-transform: uppercase
+// 	border: none
+// 	padding: 18px
+// 	border-radius: 6px
+// 	box-shadow: 0px 8px 26px 0px rgba(60,159,255,0.5)
+// 	cursor: pointer
+// 	position: relative
+// 	min-width: 145px
+
+// 	&:focus 
+// 		outline: none
+	
+
+// 	&:hover 
+// 		box-shadow: 0px 2px 26px 0px rgba(60,159,255,0.6)
+	
+
+// 	&:active 
+// 		// box-shadow: 0px 2px 26px 0px rgba(60,159,255,0.95)
+// 		top: 10px
+	
+
+
+
+
+// .btn_rev 
+// 	@extend .btn
+// 	color: $blue2
+// 	background-color: $white
+// 	box-shadow: 0px 8px 26px 0px rgba(255,255,255,0.5)
+
+// 	&:hover 
+// 		box-shadow: 0px 2px 26px 0px rgba(255,255,255,0.6)
+	
+
+
+// .btn_txt 
+// 	@extend .btn_rev
+// 	color: $grey3
+// 	background-color: transparent
+// 	box-shadow: none
+// 	letter-spacing: 2px
+	
+// 	&:hover 
+// 		box-shadow: none
+	
+	
+// 	&:active 
+// 		top: 0
+// 		font-size: 16px
+	
+
+
+// .btn_link 
+// 	color: $grey4
+// 	font-size: 16px
+// 	@include light
+// 	border: none
+// 	cursor: pointer
+// 	position: relative
+// 	background-color: transparent
+// 	border-bottom: 1px solid $grey4
+// 	padding: 0 0 3px 0
+// 	margin: 0 7px
+
+// 	&:focus 
+// 		outline: none
+	
+
+// 	&:hover 
+// 		color: $blue2
+// 		border-bottom: 1px solid $blue2
+	
+
+// 	&:active 
+// 		top: 5px
+	
+

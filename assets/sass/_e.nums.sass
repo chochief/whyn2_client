@@ -1,0 +1,106 @@
+
+.nums
+	position: absolute
+	z-index: 1000
+	top: $logo_side+4
+	left: -1vmin
+	transition: left 0.1s ease
+	// &:hover
+	// 	left: 0
+	&.on
+		left: 0
+	&.on .nums__menu
+		left: 0
+	&.on .nums__value
+		font-size: 7vmin
+
+.nums__stats.sett
+	& .nums__value
+		display: block
+		width: 58vmin // 40vmin
+		text-align: center
+		font-size: 10vmin
+	& .plus__btn
+		display: block
+		position: absolute
+		top: 50%
+		margin-top: -14.5px
+		right: 0.5vmin
+	& .minus__btn
+		display: block
+		position: absolute
+		top: 50%
+		margin-top: -14.5px
+		left: 0.5vmin
+	& .nums__score
+		margin: 7px 3px
+	& .nums__score .nums__value
+		border-radius: 18px
+
+.nums__score
+	position: relative
+	margin: 0.9vmin 0
+	& .plus__btn
+		display: none
+	& .minus__btn
+		display: none
+	&.nums__score_total .nums__value
+		background-color: lightsalmon
+	&.nums__score_month .nums__value
+		background-color: khaki
+	&.nums__score_prev .nums__value
+		background-color: lightgoldenrodyellow // bisque // blanchedalmond
+
+.nums__value
+	display: inline-block
+	max-width: 320px
+	box-shadow: 0 0 0.6vmin 0 rgba(0,0,0,.6) // box-shadow: 0 0 3px 0 rgba(0,0,0,.3) // TODO
+	@include font_family('luckiest')
+	font-size: 5vmin // TODO
+	letter-spacing: 0.1vmin
+	padding: 0.3vmin 1.2vmin 0.2vmin 3vmin // padding: 1.5px $logo_top 0 $logo_top*2 // TODO
+	text-shadow: -0.6vmin 0.2vmin 0.1vmin rgba(0,0,0,0.3) // text-shadow: -3px 1px .5px rgba(0,0,0,0.3) // TODO
+	user-select: none
+	cursor: pointer
+	opacity: 0.9
+	// transition: padding 0.1s ease
+	transition: font-size 0.1s ease
+	// &:hover
+	// 	padding: 1.5px $logo_top+2 0 $logo_top*2+2
+
+.nums__menu
+	position: fixed
+	z-index: 1000
+	top: 55vmin // TODO
+	left: -100vmin
+	min-width: 108px
+	min-height: 62px
+	transition: left 0.3s ease
+	& .close__btn
+		position: absolute
+		top: 0
+		right: 0
+	& .help__btn
+		position: absolute
+		top: 2px
+		left: 1px
+	& .times__btn
+		position: absolute
+		bottom: 0
+		right: 3px
+	& .setting__btn
+		position: absolute
+		bottom: 0
+		left: 5px
+	& .text__btn_oneplus
+		display: inline-block
+		position: absolute
+		top: 3px
+		right: 30px
+		@include font_family('luckiest')
+		font-size: 38px
+		padding: 6px
+	&.sett
+		// top: 68vmin
+		position: sticky
+		margin: 4px

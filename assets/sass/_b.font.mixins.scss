@@ -1,0 +1,47 @@
+
+// FONT MIXINS
+
+@mixin bold () {
+	// font-family: 'sf_ui_displaylight', sans-serif;
+	// font-weight: bold;
+}
+
+@mixin semibold () {
+	// font-family: 'sf_ui_displaysemibold', sans-serif;
+	// font-weight: normal;
+}
+
+@mixin normal () {
+	// font-family: 'sf_ui_displayregular', sans-serif;
+	// font-weight: normal;
+}
+
+@mixin light () {
+	// font-family: 'sf_ui_displaylight', sans-serif;
+	// font-weight: normal;
+}
+
+@mixin font_family ($style : regular) {
+	@if $style == light {
+		font-family: "podkovaregular", sans-serif;
+		font-weight: 400;
+	}
+	@if $style == regular {
+		font-family: "podkovaextrabold", sans-serif;
+		// font-weight: 700;
+	}
+	@if $style == bold {
+		font-family: "podkovaextrabold", sans-serif;
+		// font-weight: 700;
+	}
+	@if $style == luckiest {
+		font-family: "luckiest", sans-serif;
+		// font-weight: 700;
+	}
+}
+
+@mixin selection ($color, $bg-color) {
+	&::selection { background: $bg-color; color: $color; }
+	&::-moz-selection { background: $bg-color; color: $color; }
+	&::-webkit-selection { background: $bg-color; color: $color; }
+}

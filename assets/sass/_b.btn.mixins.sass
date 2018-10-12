@@ -1,0 +1,55 @@
+
+$iconbtn_width: 36px
+$iconbtn_width_large: 46px
+$iconbtn_width_small: 28px
+$iconbtn_width_small_ex: 18px
+
+@mixin btn_size ($size : 36px, $num : 0)
+	width: $size
+	height: $size
+	background-size: auto $size*3
+	background-position: (-$size*$num) (-$size*0)
+	// &:hover
+	// 	box-shadow: 0px 0px 4px 0px $orange
+	&:active
+		background-position: (-$size*$num) (-$size*1)
+		box-shadow: 0px 0px 4px 0px $orange
+	&.btn_off:active
+		background-position: (-$size*$num) (-$size*0)
+	&.btn_on
+		background-position: (-$size*$num) (-$size*1)
+		box-shadow: 0px 0px 4px 0px $orange
+
+@mixin set_btns ($num)
+	// @extend .icobtn
+	// position: absolute
+	// z-index: 10
+	background-image: url("../img/iconbtn_sprite.png")
+	background-repeat: no-repeat
+	opacity: 0.85
+	cursor: pointer
+	// @extend .icobtn
+	position: static
+	user-select: none
+	text-align: center
+	vertical-align: bottom
+	// border-radius: 50px
+	border-radius: 50%
+	box-shadow: 0px 0px 3px 0 rgba(0,0,0,.3)
+	// &:hover
+	// 	opacity: 1
+	// &.icobtn_off 
+	// 	opacity: .4
+	// &.icobtn_off:hover 
+	// 	opacity: .5
+	&.btn_off 
+		opacity: .4
+	// &.btn_off:hover 
+	// 	opacity: .5
+	@include btn_size($iconbtn_width, $num)
+	&.btn_large
+		@include btn_size($iconbtn_width_large, $num)
+	&.btn_small
+		@include btn_size($iconbtn_width_small, $num)
+	&.btn_small-ex
+		@include btn_size($iconbtn_width_small_ex, $num)

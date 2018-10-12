@@ -1,0 +1,140 @@
+doctype html
+- var meta_title = ["whyn.map", "whyn.map"]
+html(lang="#{lang}")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
+		title #{meta_title[l]}
+		include jade/favicon
+		link(rel="stylesheet" text="text/css" href="/css/style.css")
+		script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")
+		//- script(src="https://api-maps.yandex.ru/2.1/?lang=en_US" type="text/javascript")
+	body
+		.loading(id="loading")
+			.loading__text Загрузка карты...
+		.logo__container(id="logo_container")
+			.logo__image
+			div(id="logoconsole")
+		.nums(id="nums")
+			.nums__stats
+				.nums__score.nums__score_total
+					.nums__value.nums__value_total
+					.plus__btn.btn_small
+					.minus__btn.btn_small
+				.nums__score.nums__score_month
+					.nums__value.nums__value_month
+					.plus__btn.btn_small
+					.minus__btn.btn_small
+				.nums__score.nums__score_prev
+					.nums__value.nums__value_prev
+					.plus__btn.btn_small
+					.minus__btn.btn_small
+			.nums__menu
+				.close__btn.btn_small
+				.help__btn.btn_small.btn_off
+				.times__btn.btn_small
+				.setting__btn.btn_small
+				.text__btn.btn_large.text__btn_oneplus +1
+		.settings(id="settings")
+			//- .sett__alert.hidden
+				//- .sett__caption Пол/возраст не указаны!
+			.sett__form
+				.close__btn.btn_small
+				.help__btn.btn_small.btn_off
+				.sett__caption Ваш пол/возраст:
+				.sett__sex-data
+					.sett__btn.sett__sex-n(data-sex="n") ?
+					.sett__btn.sett__sex-m(data-sex="m") M
+					.sett__btn.sett__sex-f(data-sex="f") Ж
+				//- .sett__caption Ваш возраст:
+				.sett__age-data
+					.sett__btn.sett__age-n(data-age="n") ?
+					.sett__btn.sett__age-a(data-age="a")
+						small -14
+					.sett__btn.sett__age-b(data-age="b")
+						sup 15
+						sub 17
+					.sett__btn.sett__age-c(data-age="c")
+						sup 18
+						sub 24
+					.sett__btn.sett__age-d(data-age="d")
+						sup 25
+						sub 44
+					.sett__btn.sett__age-e(data-age="e")
+						sup 45
+						sub 59
+					.sett__btn.sett__age-f(data-age="f")
+						small 60+
+				.sett__filter-lock
+				.sett__caption С кем вы желаете встречаться:
+				.sett__filter_m
+					.sett__btn.off М
+					.sett__btn.sett__age-a(data-filter="ma")
+						small -14
+					.sett__btn.sett__age-b(data-filter="mb")
+						sup 15
+						sub 17
+					.sett__btn.sett__age-c(data-filter="mc")
+						sup 18
+						sub 24
+					.sett__btn.sett__age-d(data-filter="md")
+						sup 25
+						sub 44
+					.sett__btn.sett__age-e(data-filter="me")
+						sup 45
+						sub 59
+					.sett__btn.sett__age-f(data-filter="mf")
+						small 60+
+				.sett__filter_f
+					.sett__btn.off Ж
+					.sett__btn.sett__age-a(data-filter="fa")
+						small -14
+					.sett__btn.sett__age-b(data-filter="fb")
+						sup 15
+						sub 17
+					.sett__btn.sett__age-c(data-filter="fc")
+						sup 18
+						sub 24
+					.sett__btn.sett__age-d(data-filter="fd")
+						sup 25
+						sub 44
+					.sett__btn.sett__age-e(data-filter="fe")
+						sup 45
+						sub 59
+					.sett__btn.sett__age-f(data-filter="ff")
+						small 60+
+		//- btns
+		.btns.help__btn.btn_small.btn_off(id="btns_help")
+		.btns.online__btn.btn_large(id="btns_online")
+		.btns.setting__btn(id="btns_settings")
+			.sett__alert !
+		//- .btns.globus__btn(id="btns_globus")
+		.btns.zoop__btn(id="btns_zoop")
+		.btns.zoom__btn(id="btns_zoom")
+		.btns.rotl__btn(id="btns_rotl")
+		.btns.rotr__btn(id="btns_rotr")
+		.btns.rota__btn(id="btns_rota")
+		.btns.rotn__btn.btn_large(id="btns_rotn")
+		.sims(id="sims_alert") offline / fake
+		.map-container(id="map_container")
+			//- yandex logo
+			.ya-copyright
+				.ya-copyright__content-cell
+					.ya-copyright__text © Яндекс
+					a.ya-copyright__agreement(target="_blank" href="http://yandex.ru/legal/maps_termsofuse/") Условия
+				.ya-copyright__logo-cell
+					a.ya-copyright__link(href="https://yandex.ru/maps/" target="_blank")
+			.map(id="map")
+		.live__container(id="live_container").off
+			.news__pers-block
+				img.news__pers
+			.news__spoiler.off(id="news_spoiler")
+				span.spoiler__text
+		.news__content.off(id="news__content")
+			.close__btn.btn_small
+			.news__pages
+				.news__page
+			.news__span-block.news__btn-block
+			.news__span-block.news__pers-page
+		script(src="js/app.js")

@@ -1,0 +1,82 @@
+
+$btns_padd: 3px
+$btns_pyan: 27px
+
+.common_btns // @extend
+	position: absolute
+	z-index: 10
+
+.btns
+	&.help__btn
+		@extend .common_btns
+		top: $btns_padd
+		right: $btns_padd+50
+	&.online__btn
+		@extend .common_btns
+		top: $btns_padd
+		right: $btns_padd
+	&.setting__btn
+		@extend .common_btns
+		top: $btns_padd+50
+		right: $btns_padd
+		& .sett__alert
+			position: relative
+			top: 2%
+			left: -50%
+			@include font_family('luckiest')
+			font-size: 13px
+			border-radius: 20px
+			// color: #fff
+			// background-color: #ed1c24 // #f15a24
+			width: 18px
+			height: 18px
+			padding: 2px
+			color: #fff
+			border: 1px dashed $orange
+			background-color: $orange
+	&.globus__btn
+		@extend .common_btns
+		bottom: 158px
+		right: $btns_padd
+	&.zoop__btn
+		@extend .common_btns
+		bottom: 118px
+		right: $btns_padd
+	&.zoom__btn
+		@extend .common_btns
+		bottom: 78px
+		right: $btns_padd
+	&.rotl__btn
+		@extend .common_btns
+		bottom: $btns_pyan
+		right: 134px
+	&.rotr__btn
+		@extend .common_btns
+		bottom: $btns_pyan
+		right: 94px
+	&.rota__btn
+		@extend .common_btns
+		bottom: $btns_pyan
+		right: 54px
+	&.rotn__btn
+		@extend .common_btns
+		bottom: $btns_pyan
+		right: $btns_padd
+
+.sims
+	position: absolute
+	z-index: 10
+	top: -100vmax
+	right: 89px
+	text-align: right
+	font-size: 12px
+	letter-spacing: 0.3px
+	text-transform: uppercase
+	background-color: rgba(255,255,255,0.9)
+	// box-shadow: 0px 0px 4px 0px $orange
+	box-shadow: 0px 0px 3px 0 rgba(0,0,0,.3)
+	padding: 3px 10px
+	border-radius: 14px
+	transition: top 0.3s ease
+	&.on
+		top: 5px

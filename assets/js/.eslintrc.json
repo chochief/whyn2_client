@@ -1,0 +1,27 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "globals": {
+            "APP": true,
+            "ymaps": true
+    },
+    "extends": "eslint:recommended",
+    "rules": {
+        "indent": [
+            "error",
+            "tab"
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "quotes": ["error", "double", { "allowTemplateLiterals": true }],
+        "semi": [
+            "error",
+            "never"
+        ],
+        "no-console": 0
+    }
+}

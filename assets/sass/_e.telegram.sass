@@ -1,0 +1,81 @@
+
+.t
+	display: inline-block
+	line-height: 1.42
+	
+// Размер (12, 13, 14, 15 .. 20, 21), начертание (normal, bold, Luckiest, курсив, подчеркивание)
+
+.ts12
+	font-size: 12px
+
+.ts13
+	font-size: 13px
+
+.ts14
+	font-size: 14px
+
+.ts15
+	font-size: 15px
+
+.ts16
+	font-size: 16px
+
+.ts17
+	font-size: 17px
+
+.ts18
+	font-size: 18px
+
+s18
+	font-size: 18px
+
+.ts19
+	font-size: 19px
+
+.ts20
+	font-size: 20px
+
+.ts21
+	font-size: 21px
+
+.tf
+	@extend .t
+
+.tfr
+	@extend .tf
+	@include font_family('light')
+
+.tfb
+	@extend .tf
+	@include font_family('bold')
+
+fb
+	@include font_family('bold')
+
+.tflu
+	@extend .tf
+	@include font_family('luckiest')
+
+m
+	background-color: lemonchiffon
+	border-radius: 5px
+	padding: 1px 2px
+
+w
+	text-decoration: underline
+	text-decoration-color: #084ca1
+	text-decoration-style: wavy
+
+// .news__lead
+// 	// @extend .telegram
+// 	font-size: 16px
+		
+// .news__text
+// 	// @extend .telegram
+// 	font-size: 14px
+
+// .news__b
+// 	// @include font_family('bold')
+// 	// font-size: 16px
+// 	// font-weight: 700
+// 	font-weight: bolder

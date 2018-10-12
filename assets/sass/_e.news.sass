@@ -1,0 +1,247 @@
+
+$pers_side: 25vmin //25vw // 100px // большая сторна - width or height
+$news_container_width: 220px
+
+// .pers
+// 	position: absolute
+// 	z-index: 1002
+// 	left: 0px
+// 	bottom: 0px
+// 	height: $pers_side
+// 	width: $pers_side*1.8
+// 	background-size: auto $pers_side
+// 	background-image: url("../img/pers_dev.png")
+// 	background-repeat: no-repeat
+// 	cursor: pointer
+// 	transition: all 0.2s ease-in-out
+// 	&:hover
+// 		height: $pers_side*1.6
+// 		background-size: auto $pers_side*1.6
+// 	&.pers_vertical
+// 		height: $pers_side*1.6
+// 		background-size: auto $pers_side*1.6
+// 		bottom: -$pers_side*0.6
+// 	&.pers_vertical:hover
+// 		bottom: 0
+
+.live__container
+	position: absolute
+	z-index: 100500
+	// left: $pers_side/2+10px
+	left: 0
+	// bottom: $pers_side
+	// bottom: -60px // 0
+	bottom: 0
+	height: auto
+	// width: $news_container_width
+	// width: 100vw
+	// max-width: 700px
+	// margin-right: 7px
+	font-size: 0
+	// transition: bottom 0.1s ease-in-out
+	// &:hover
+	// 	bottom: 0
+		// width: $pers_side*1.4
+	&.off
+		bottom: -100vh
+
+.news__content
+	position: absolute
+	z-index: 100
+	width: 65vw
+	max-width: 500px
+	min-height: 80px
+	left: 33vmin
+	bottom: 23vmin
+	background-color: rgba(255,255,255,0.9)
+	border-radius: 8px
+	padding: 13px 12px 5px
+	box-shadow: 0px 0px 3px 0 rgba(0,0,0,.3)
+	transition: bottom 0.3s ease // transition: bottom 0.1s ease-in-out
+	touch-action: none
+	&:focus
+		outline: none
+	&:active
+		outline: none
+	&::before
+		border: 16px solid transparent
+		border-right-color: rgba(255,255,255,0.85)
+		position: absolute
+		z-index: -1
+		bottom: 6px // 26px // 69px
+		left: -30px
+		content: ""
+	&.off
+		bottom: -100vh
+	& .close__btn
+		position: absolute
+		top: 5px
+		right: 4px
+
+.news__pages
+	margin-bottom: 10px
+
+.news__span-block
+	margin: 0 0 6px
+	// transition: all 0.2s ease-in-out
+	&:last-child
+		margin: 0
+	&:first-child // ! после &:last-child - чтобы не наползало на кнопку закрытия новости
+		margin: 6px 18px 6px 0
+
+.news__btn
+	@extend .icobtn
+	position: static
+	width: $iconbtn_width_small
+	height: $iconbtn_width_small
+	background-size: auto $iconbtn_width_small*3
+	background-position: (-$iconbtn_width_small*11) 0
+	font-size: 18px
+	display: inline-block
+	margin: 2px 2.5px
+	text-align: center
+	padding: 4px 0
+	vertical-align: bottom
+	user-select: none
+	&:first-child
+		margin: 2px 3px 2px 0
+	&:last-child
+		margin: 2px 0 2px 3px
+	&.news__btn_on
+		background-position: (-$iconbtn_width_small*11) (-$iconbtn_width_small)
+	&.news__btn_pers
+		background-position: (-$iconbtn_width_small*5) (-$iconbtn_width_small*2)
+
+.news__pers-page
+	vertical-align: top
+	margin: 0 -8px !important
+
+.news__pers-ava
+	@extend .icobtn
+	position: static
+	width: $iconbtn_width_small
+	height: $iconbtn_width_small
+	background-size: auto $iconbtn_width_small*3
+	background-position: (-$iconbtn_width_small*11) 0
+	font-size: 0 // 18px
+	display: inline-block
+	vertical-align: middle
+	margin: 2px 2.5px
+	overflow: hidden
+	border-radius: 50%
+	user-select: none
+	box-shadow: 0px 0px 4px 0.6px rgba(0,0,0,0.5)
+	&.on
+		background-position: (-$iconbtn_width_small*11) (-$iconbtn_width_small)
+		box-shadow: 0px 0px 8px 2px $orange
+		opacity: 1
+	// &:first-child
+	// 	margin: 2px 3px 2px 0
+	// &:last-child
+	// 	margin: 2px 0 2px 3px
+	&.news__btn_pers
+		background-position: (-$iconbtn_width_small*5) (-$iconbtn_width_small*2)
+
+.news__pers-ava-img
+	width: $iconbtn_width_small
+	height: auto
+
+.telegram
+	background-color: rgba(255,255,255,0.85);
+	padding: 1px 5px 3px;
+	border-radius: 3px;
+	box-shadow: 0px 0px 3px 0 rgba(0,0,0,.6)
+	line-height: 1.45
+
+.news__header
+	// @extend .telegram
+	@include font_family('bold')
+	font-size: 21px
+
+.news__lead
+	// @extend .telegram
+	font-size: 16px
+		
+.news__text
+	// @extend .telegram
+	font-size: 14px
+
+.news__b
+	// @include font_family('bold')
+	// font-size: 16px
+	// font-weight: 700
+	font-weight: bolder
+
+.news__pers-block
+	width: 25vmin
+	max-width: 200px
+	max-height: 25vmin
+	overflow: hidden
+	// transition: all 0.9s ease-in-out
+	user-select: none
+	&.on
+		max-height: none
+		width: 33vmin
+		height: auto
+
+img.news__pers
+	width: 25vmin // $pers_side // 1/3 vw
+	max-width: 200px
+	height: auto
+	cursor: pointer
+	// user-select: none
+	// transition: all 0.9s ease-in-out
+	&.on
+		// bottom: 0
+		width: 33vmin // 33vw
+	&.jpg
+		margin: 2vmin
+		width: 21vmin
+		max-width: 170px
+		border-radius: 8px
+		box-shadow: 0px 0px .7vmin 0 rgba(0,0,0,.6)
+	&.on.jpg
+		width: 30vmin
+
+.news__spoiler
+	position: absolute
+	z-index: 1005
+	left: 0 // 4px
+	bottom: 5px
+	width: $pers_side // 44vw
+	max-width: 200px
+	text-align: center
+	cursor: pointer
+	transition: left 0.2s ease-in-out
+	&.off
+		left: -50vw
+
+.spoiler__text
+	display: inline-block
+	font-size: $pers_side/8.9 // 2.8vmin
+	background-color: rgba(255,255,255,0.7) // rgba(255,255,255,0.5)
+	padding: 1px 5px 3px;
+	border-radius: 1px;
+	box-shadow: 0px 0px 3px 0 rgba(0,0,0,.3)
+
+// .pers__text
+// 	position: absolute
+// 	bottom: 0
+// 	left: 0
+// 	& span
+// 		font-size: 18px
+// 		background-color: rgba(255,255,255,.9)
+// 		box-shadow: 0px 0px 3px 0 rgba(0,0,0,.3)
+
+// .news
+// 	position: absolute
+// 	z-index: 1001
+// 	bottom: 150px
+// 	left: 15px
+// 	width: 300px
+// 	height: 200px
+// 	background-color: rgba(255,255,255,.9)
+// 	border-radius: 3px
+// 	padding: 7px
+// 	// text-align: center
+// 	box-shadow: 0px 0px 3px 0 rgba(0,0,0,.3)
